@@ -1,0 +1,74 @@
+﻿<Window x:Class="Kalkulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kalkulator" Height="600" Width="600">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="6" Text="{Binding UserInput}" Style="{StaticResource TextRepresentation}"/>
+            <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0,1,0,0" >
+                <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Działanie:" Style="{StaticResource DescriptionRepresentation}"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="0,1,0,0" >
+                <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4" Text="{Binding Expression}" Style="{StaticResource TextRepresentation}"/>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0,1,0,0" >
+                <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Wynik:" Style="{StaticResource DescriptionRepresentation}"/>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="0,1,0,0">
+                <TextBlock Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" Text="{Binding Result}" Style="{StaticResource TextRepresentation}"/>
+            </Border>
+
+            <Button Grid.Row="3" Grid.Column="4" Content="C"   Click="ClearInput" Grid.ColumnSpan="2"/>
+            <Button Grid.Row="3" Grid.Column="3" Content="del" Click="DeleteLastChar"/>
+
+            <Button Grid.Row="7" Grid.Column="3" Content="%" Click="AppendPercentageOperation"/>
+            <Button Grid.Row="7" Grid.Column="2" Content="," Click="AppendComma"/>
+            <Button Grid.Row="4" Grid.Column="4" Content="-"   Click="AppendMinus"/>
+
+            <Button Grid.Row="4" Grid.Column="3" Content="+"   Click="AppendOperation"/>
+            <Button Grid.Row="5" Grid.Column="3" Content="*"   Click="AppendOperation"/>
+            <Button Grid.Row="5" Grid.Column="4" Content="/"   Click="AppendOperation"/>
+            <Button Grid.Row="6" Grid.Column="3" Content="^"   Click="AppendOperation"/>
+            <Button Grid.Row="3" Grid.Column="0" Content="mod" Click="AppendOperation"/>
+
+            <Button Grid.Row="4" Grid.Column="0" Content="1" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="4" Grid.Column="1" Content="2" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="4" Grid.Column="2" Content="3" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="5" Grid.Column="0" Content="4" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="5" Grid.Column="1" Content="5" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="5" Grid.Column="2" Content="6" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="6" Grid.Column="0" Content="7" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="6" Grid.Column="1" Content="8" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="6" Grid.Column="2" Content="9" Click="AppendNumber" Style="{StaticResource NumberRepresentation}"/>
+            <Button Grid.Row="7" Grid.Column="0" Content="0" Click="AppendNumber" Style="{StaticResource NumberRepresentation}" Grid.ColumnSpan="2"/>
+
+            <Button Grid.Row="7" Grid.Column="4" Click="Calculate" Content="=" Grid.ColumnSpan="3"/>
+            <Button Grid.Row="6" Grid.Column="4" Click="Calculate" Content="sqrt"/>
+            <Button Grid.Row="3" Grid.Column="1" Click="Calculate" Content="1/x"/>
+            <Button Grid.Row="6" Grid.Column="5" Click="Calculate" Content="!"/>
+            <Button Grid.Row="3" Grid.Column="2" Click="Calculate" Content="ln"/>
+            <Button Grid.Row="5" Grid.Column="5" Click="Calculate" Content="floor"/>
+            <Button Grid.Row="4" Grid.Column="5" Click="Calculate" Content="ceil"/>
+
+        </Grid>
+    </Grid>
+</Window>

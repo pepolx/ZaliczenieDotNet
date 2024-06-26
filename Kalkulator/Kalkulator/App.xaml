@@ -1,0 +1,29 @@
+﻿<Application x:Class="Kalkulator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Kalkulator"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="{x:Type TextBlock}" x:Key="CommonTextRepresentation">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="0,0,15,0"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="DescriptionRepresentation" BasedOn="{StaticResource CommonTextRepresentation}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="TextRepresentation" BasedOn="{StaticResource CommonTextRepresentation}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}" x:Key="NumberRepresentation">
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
+    </Application.Resources>
+</Application>
