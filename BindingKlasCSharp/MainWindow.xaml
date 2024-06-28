@@ -1,0 +1,36 @@
+﻿<Window x:Class="BindingKlasCSharp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindingKlasCSharp"
+        mc:Ignorable="d"
+        Title="Filmy" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Button Content="Dodaj" Click="AddMovie"/>
+            <Button Content="Edytuj" Click="EditMovie"/>
+            <Button Content="Usuń" Click="DeleteMovie"/>
+            <Button Content="Importuj" Click="ImportMovies"/>
+            <Button Content="Eksportuj" Click="ExportMovies"/>
+        </StackPanel>
+
+        <ListView Name="MoviesList" Grid.Row="1" ItemsSource="{Binding movies}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="Tytuł" DisplayMemberBinding="{Binding Title}"/>
+                    <GridViewColumn Width="Auto" Header="Reżyser" DisplayMemberBinding="{Binding Director}"/>
+                    <GridViewColumn Width="Auto" Header="Studio" DisplayMemberBinding="{Binding Studio}"/>
+                    <GridViewColumn Width="Auto" Header="Nośnik" DisplayMemberBinding="{Binding Media}"/>
+                    <GridViewColumn Width="Auto" Header="Długość" DisplayMemberBinding="{Binding Duration}"/>
+                    <GridViewColumn Width="Auto" Header="Data Wydania" DisplayMemberBinding="{Binding Released, StringFormat=d}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

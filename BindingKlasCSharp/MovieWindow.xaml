@@ -1,0 +1,49 @@
+﻿<Window x:Class="BindingKlasCSharp.MovieWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindingKlasCSharp"
+        mc:Ignorable="d"
+        Title="Filmy" Height="250" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Tytuł"/>
+        <TextBox Grid.Column="1" Name="Title" Text="{Binding Title}"/>
+
+        <Label Grid.Row="1" Content="Reżyser"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="Director" Text="{Binding Director}"/>
+
+        <Label Grid.Row="2" Content="Studio"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="Studio" Text="{Binding Studio}"/>
+
+        <Label Grid.Row="3" Content="Nośnik"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" Name="Media" Text="{Binding Media}">
+            <ComboBoxItem Content="VHS"/>
+            <ComboBoxItem Content="DVD"/>
+            <ComboBoxItem Content="BlueRay"/>
+        </ComboBox>
+
+
+        <Label Grid.Row="4" Content="Długość"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="Duration" Text="{Binding Duration}"/>
+
+        <Label Grid.Row="5" Content="Data wydania"/>
+        <DatePicker Grid.Row="5" Grid.Column="1" Name="Released" SelectedDate="{Binding Released}"/>
+
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Content="OK" Click="Submit"/>
+    </Grid>
+</Window>
